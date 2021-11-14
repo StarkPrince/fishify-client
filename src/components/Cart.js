@@ -57,8 +57,13 @@ function Cart({ products, items, setItems })
                 {/* take customer details in a form and mail the cart items */}
                 <form className="bg-light mt-4 p-4 rounded">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" />
+                        <label for="name" class="form-label">Name*</label>
+                        <input type="text" class="form-control" id="name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number*</label>
+                        <input type="number" class="form-control" id="phone" aria-describedby="phoneHelp" required />
+                        <div id="phoneHelp" class="form-text">We'll never share your phone number with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
@@ -66,9 +71,8 @@ function Cart({ products, items, setItems })
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="number" class="form-control" id="phone" aria-describedby="phoneHelp" />
-                        <div id="phoneHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <label for="address" class="form-label">Address*</label>
+                        <textarea type="address" class="form-control" id="address" required />
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
