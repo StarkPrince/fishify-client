@@ -21,7 +21,9 @@ function Header()
                         </ul>
                         <form class="d-flex">
                             <ul className="navbar-nav align-content-end ">
-                                Checkout
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/checkout">Checkout</a>
+                                </li>
                             </ul>
                         </form>
                     </div>
