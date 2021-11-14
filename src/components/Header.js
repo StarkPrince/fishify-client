@@ -12,21 +12,21 @@ function Header()
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
+                        {/* <ul className="navbar-nav">
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Features</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Pricing</a>
                             </li>
+                        </ul> */}
+                        {/* <form class="d-flex"> */}
+                        <ul className="navbar-nav align-content-end ">
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/checkout">Checkout</Link>
+                            </li>
                         </ul>
-                        <form class="d-flex">
-                            <ul className="navbar-nav align-content-end ">
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/checkout">Checkout</Link>
-                                </li>
-                            </ul>
-                        </form>
+                        {/* </form> */}
                     </div>
                 </div>
             </nav>

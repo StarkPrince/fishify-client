@@ -30,7 +30,7 @@ function Cart({ products, items, setItems })
                                 <div className="align-items-around" style={{ width: '25rem' }}>
                                     <div class="card-body mb-0">
                                         <h5 class="card-title">{product.title}</h5>
-                                        <p class="card-text">{product.description}</p>
+                                        {/* <p class="card-text">{product.description}</p> */}
                                         <h5>₹{product.price * items[product.id]}</h5>
                                     </div>
                                     <div className="btn btn-success mt-0">

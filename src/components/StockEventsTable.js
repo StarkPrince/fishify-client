@@ -12,7 +12,6 @@ function StockEventsTable({ products, items, setItems })
     }
     return (
         <div className="container d-flex align-content-around flex-wrap">
-            {console.log(items)}
             {products.map(product =>
             {
                 var img = "https://sushil-fish-cart.herokuapp.com"
