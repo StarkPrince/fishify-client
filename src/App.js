@@ -28,7 +28,20 @@ function App()
   }, [])
 
   return (
-    <div>
+
+    <div class="area" >
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <Header />
       <StockEventsTable products={products} items={items} setItems={setItems} />
       <Footer />

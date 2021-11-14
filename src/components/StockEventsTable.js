@@ -28,8 +28,8 @@ function StockEventsTable({ products, items, setItems })
                     }
                 }
                 return (
-                    <div className="card m-auto mb-2 mt-2" key={product.id} style={{ width: '20rem', height: '28rem' }}>
-                        <div className="m-auto p-auto">
+                    <div className="card m-auto mb-4 mt-1 shadow" key={product.id} style={{ width: '20rem', height: '27.3rem', border: 'none', backgroundColor: 'white' }}>
+                        <div className="m-auto">
                             <img
                                 src={img}
                                 style={{ width: '20rem', height: '20rem' }}
@@ -44,11 +44,10 @@ function StockEventsTable({ products, items, setItems })
                                     </h4>
                                 </div>
                                 <div className="align-items-md-center">
-                                    <h5>Price: ₹{product.price}</h5>
+                                    <h5>₹{product.price}/kg</h5>
                                 </div>
-                                <div className="align-items-md-center btn btn-success" style={{ height: '3rem' }}>
+                                <div className="align-items-md-center btn btn-success mt-0" style={{ height: '3rem' }}>
                                     {items[product.id] === 0 ?
-
                                         <button className="btn" onClick={() => addItem(product.id)}>
                                             <span className="fw-bold m-1 text-light">Add to cart</span>
                                         </button>
@@ -57,7 +56,7 @@ function StockEventsTable({ products, items, setItems })
                                                 <span className="fw-bold m-1 text-light ">-</span>
                                             </button>
                                             <span className="fw-bold m-3 text-light ">{items[product.id]} kg</span>
-                                            <button class="btn " onClick={() => addItem(product.id)}>
+                                            <button class="btn" onClick={() => addItem(product.id)}>
                                                 <span className="fw-bold m-1 text-light">+</span>
                                             </button>
                                         </div>
