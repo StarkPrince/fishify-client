@@ -8,27 +8,29 @@ import React, { useState, useEffect } from 'react';
 function App()
 {
   const [products, setProducts] = useState([])
-  const [events, setEvents] = useState([])
+  const [items, setItems] = useState({})
 
   useEffect(() =>
   {
     const fetchProducts = async () =>
     {
       const response = await axios.get('https://sushil-fish-cart.herokuapp.com/products');
-      setProducts(response.data);
-    }
-    const fetchEvents = async () =>
-    {
-      const response = await axios.get('https://sushil-fish-cart.herokuapp.com/stock-events')
-      setEvents(response.data)
+      await setProducts(response.data);
+      let obj = {};
+      response.data.forEach(element =>
+      {
+        obj[element.id] = 0;
+      })
+      await setItems(obj);
     }
     fetchProducts();
+
   }, [])
 
   return (
     <div>
       <Header />
-      <StockEventsTable products={products} events={events} />
+      <StockEventsTable products={products} items={items} setItems={setItems} />
       <Footer />
     </div>
   );
