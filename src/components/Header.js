@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header()
 {
@@ -6,7 +7,7 @@ function Header()
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Fish Cart</a>
+                    <Link className="navbar-brand" to="/">Fish Cart</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -22,7 +23,7 @@ function Header()
                         <form class="d-flex">
                             <ul className="navbar-nav align-content-end ">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/checkout">Checkout</a>
+                                    <Link className="nav-link" to="/checkout">Checkout</Link>
                                 </li>
                             </ul>
                         </form>

@@ -1,24 +1,15 @@
+import Cart from './Cart';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import React from 'react';
+import './Checkout.css'
 
 function Checkout({ products, items, setItems })
 {
     return (
-        <div class="area" >
-            <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div>
             <Header />
+            <Cart products={products} items={items} setItems={setItems} />
             <Footer />
         </div>
     );

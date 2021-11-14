@@ -25,10 +25,11 @@ function App()
   return (
 
     <div >
+
       <Router>
         <Routes>
           <Route path="/checkout" element={<Checkout products={products} items={items} setItems={setItems} />} />
-          {/* <Route path="/" element={<Home products={products} items={items} setItems={setItems} />} /> */}
+          <Route path="/" element={<Home products={products} items={items} setItems={setItems} />} />
         </Routes>
       </Router>
     </div>
