@@ -14,7 +14,7 @@ function StockEventsTable({ products, items, setItems })
         <div className="container d-flex align-content-around flex-wrap">
             {products.map(product =>
             {
-                var img = "https://sushil-fish-cart.herokuapp.com"
+                var img = ""
                 if (product.image) {
                     if (product.image.formats.medium) {
                         img += product.image.formats.medium.url

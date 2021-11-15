@@ -16,7 +16,7 @@ function Cart({ products, items, setItems })
         <div className="container-md cart">
             {products.map(product =>
             {
-                var img = "https://sushil-fish-cart.herokuapp.com" + product.image.formats.thumbnail.url
+                var img = product.image.formats.thumbnail.url
                 return (
                     <div>
                         {items[product.id] > 0 ?
