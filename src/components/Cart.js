@@ -38,7 +38,7 @@ function Cart({ products, items, setItems })
                                             <span className="fw-bold m-0 text-light ">-</span>
                                         </button>
                                         <span className="fw-bold m-0 text-light ">{items[product.id]} kg</span>
-                                        <button className="btn" onClick={() => addItem(product.id)}>
+                                        <button className={`btn ${items[product.id] >= product.Stock ? "disabled" : ""}`} onClick={() => addItem(product.id)}>
                                             <span className="fw-bold m-0 text-light">+</span>
                                         </button>
                                     </div>
