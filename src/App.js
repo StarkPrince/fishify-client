@@ -13,7 +13,7 @@ function App()
   {
     const fetchProducts = async () =>
     {
-      const response = await axios.get('https://sushil-fish-cart.herokuapp.com/products');
+      const response = await axios.get('http://localhost:1337/products');
       await setProducts(response.data);
       let obj = {};
       response.data.forEach(element => { obj[element.id] = 0; })

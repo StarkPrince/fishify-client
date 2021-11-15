@@ -27,9 +27,9 @@ function StockEventsTable({ products, items, setItems })
                     }
                 }
                 return (
-                    <article class="hentry card m-auto mb-3 mt-3 shadow d-flex flex-column" style={{ width: '24rem', height: '38rem', backgroundColor: 'white', border: 'none', borderRadius: '5px' }}>
-                        <header class="entry-header align-items-center">
-                            <div class="entry-thumbnail">
+                    <article className="hentry card m-auto mb-3 mt-3 shadow d-flex flex-column" style={{ width: '24rem', height: '38rem', backgroundColor: 'white', border: 'none', borderRadius: '5px' }} key={product.id}>
+                        <header className="entry-header align-items-center">
+                            <div className="entry-thumbnail">
                                 <a href="portfolio-item.html"><img
                                     src={img}
                                     style={{ width: '22rem', height: '20rem' }}
@@ -38,24 +38,27 @@ function StockEventsTable({ products, items, setItems })
                                 /></a>
                             </div>
                             <div className="align-items-center">
-                                <h3 class="entry-title m-5 mb-0 mt-0">
+                                <h3 className="entry-title m-5 mb-0 mt-0">
                                     <a href="portfolio-item.html"><span >{product.title}</span>
                                         {product.Bestseller && <span >⭐</span>}</a>
                                 </h3>
-                                <h4 class="m-5 mb-2 mt-0">₹{product.price}/kg</h4>
-                                <h5 class="m-5 mb-2 mt-0">{product.description}</h5>
+                                <h4 className="m-5 mb-2 mt-0">₹{product.price}/kg</h4>
+                                <h5 className="m-5 mb-2 mt-0">{product.description}</h5>
+                                <span className={`m-5 mb-2 mt-0 rounded p-1 text-white fs-6 bg-${product.Stock < 1 ? "danger" : "success"}`}>
+                                    {product.Stock < 1 ? "Out of Stock" : "In Stock"}
+                                </span>
                             </div>
                             <div className="align-items-center btn btn-success" style={{ position: 'absolute', bottom: '1.5rem', left: '6.5rem', height: '3rem' }}>
                                 {items[product.id] === 0 ?
-                                    <button className="btn" onClick={() => addItem(product.id)}>
+                                    <button className={`btn ${items[product.id] >= product.Stock ? "disabled" : ""}`} onClick={() => addItem(product.id)}>
                                         <span className="fw-bold m-1 text-light">Add to cart</span>
                                     </button>
                                     : <div >
-                                        <button class=" btn" onClick={() => removeItem(product.id)}>
+                                        <button className="btn" onClick={() => removeItem(product.id)}>
                                             <span className="fw-bold m-1 text-light ">-</span>
                                         </button>
                                         <span className="fw-bold m-1 text-light ">{items[product.id]} kg</span>
-                                        <button class="btn" onClick={() => addItem(product.id)}>
+                                        <button className={`btn ${items[product.id] >= product.Stock ? "disabled" : ""}`} onClick={() => addItem(product.id)}>
                                             <span className="fw-bold m-1 text-light">+</span>
                                         </button>
                                     </div>

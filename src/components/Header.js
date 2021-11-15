@@ -32,13 +32,13 @@ function Header()
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav align-content-end ">
                             <li className="nav-item">
-                                <a className="nav-link" href="#contact"><i class="bi bi-person-lines-fill"></i> Contact</a>
+                                <a className="nav-link" href="#contact"><i className="bi bi-person-lines-fill"></i> Contact</a>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/checkout"><i class="bi bi-cart4"></i> Checkout</Link>
+                                <Link className="nav-link" to="/checkout"><i className="bi bi-cart4"></i> Checkout</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#about"><i class="bi bi-file-person"></i> About</a>
+                                <a className="nav-link" href="#about"><i className="bi bi-file-person"></i> About</a>
                             </li>
                         </ul>
                     </div>
