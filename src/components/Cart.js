@@ -1,4 +1,5 @@
 import React from 'react'
+import './Cart.css'
 
 function Cart({ products, items, setItems })
 {
@@ -12,7 +13,7 @@ function Cart({ products, items, setItems })
     }
 
     return (
-        <div className="container-md">
+        <div className="container-md cart">
             {products.map(product =>
             {
                 var img = "https://sushil-fish-cart.herokuapp.com" + product.image.formats.thumbnail.url
@@ -29,9 +30,8 @@ function Cart({ products, items, setItems })
                                 />
                                 <div className="align-items-around" style={{ width: '25rem' }}>
                                     <div class="card-body mb-0">
-                                        <h5 class="card-title">{product.title}</h5>
-                                        {/* <p class="card-text">{product.description}</p> */}
-                                        <h5>₹{product.price * items[product.id]}</h5>
+                                        <h3 class="card-title">{product.title}</h3>
+                                        <h4>₹{product.price * items[product.id]}</h4>
                                     </div>
                                     <div className="btn btn-success mt-0">
                                         <button class="btn" onClick={() => removeItem(product.id)}>
@@ -55,7 +55,7 @@ function Cart({ products, items, setItems })
                     </h4>
                 </div>
                 {/* take customer details in a form and mail the cart items */}
-                <form className="bg-light mt-4 p-4 rounded">
+                <form className="bg-light mt-4 p-4 rounded form">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name*</label>
                         <input type="text" class="form-control" id="name" required />
