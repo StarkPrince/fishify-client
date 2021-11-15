@@ -4,74 +4,80 @@ function Footer()
 {
     return (
         <div>
-            <footer className="text-center text-lg-start bg-light text-muted">
-                <section
-                    className="d-flex justify-content-center  p-4 border-bottom"
-                >
-                    <div className="me-5 d-none d-lg-block">
-                        <span>Get connected with us on social networks:</span>
-                    </div>
-                    <div>
-                        <a href="" className="me-4 text-reset">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i class="bi bi-whatsapp"></i>
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                    </div>
-                </section>
-                <section className="">
-                    <div className="container text-center text-md-start mt-5">
-                        <div className="row mt-3">
-                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    <i className="fas fa-gem me-3"></i>Company name
-                                </h6>
-                                <p>
-                                    Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                    dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </div>
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    Useful links
-                                </h6>
-                                <p>
-                                    <a href="#!" className="text-reset">Pricing</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Orders</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Help</a>
-                                </p>
-                            </div>
-                            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    Contact
-                                </h6>
-                                <p><i className="fas fa-home me-3"></i> LehariyaSarai, Darbhanga</p>
-                                <p>
-                                    <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
-                                </p>
-                                <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                            </div>
+            <div class="footerwrapper">
+                <footer class="container">
+                    <div class="customerreview">
+                        <h2>Customer Reviews</h2>
+                        <div class="review">
+                            <p><strong>&#8220; </strong>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit
+                                auctor
+                                aliquet.Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
+                                nec sagittis sem nibh id elit.
+                                Duis sed odio sit amet nibh vulputate a ornare odio.Sed non mauris vitae erat consequat
+                                <strong>&#8221; </strong>
+                            </p>
+
+                            <h4>- JOHN ALVES</h4>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="line"></div>
+
+                        <div class="review">
+                            <p><strong>&#8220; </strong>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit
+                                auctor
+                                aliquet.Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
+                                nec sagittis sem nibh id elit.
+                                Duis sed odio sit amet nibh vulputate a ornare odio.Sed non mauris vitae erat consequat
+                                <strong>&#8221; </strong>
+                            </p>
+                            <h4>- CATHREINE JOHNES</h4>
                         </div>
                     </div>
-                </section>
-                <div className="text-center p-4" >
-                    {/* style={{ "backgroundColor": rgba(0, 0, 0, 0.05) }} */}
-                    © 2021 Copyright:
-                    {/* <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a> */}
+                    <div class="socialize">
+
+                        <h2>Socialize</h2>
+                        <div class="socialimgs">
+                            <a href="https://www.facebook.com/Mido.HHH"><img src="images/fb.png" width="68" height="68"
+                                class="facebook" alt="fb"></a>
+                            <a href="https://twitter.com/Mido_A7X">
+                                <img src="images/twitter.png" width="68" height="68"
+                                    class="twitter" alt="twitter" />
+                            </a>
+                            <a href="#"><img src="images/youtube.png" width="68" height="69" class="youtube" alt="youtube" /></a>
+                            <a href="#"><img src="images/g+.png" width="68" height="68" class="google" alt="g+" /></a>
+                            <a href="#"><img src="images/message.png" width="68" height="68" class="message" alt="message" /></a>
+                        </div>
+                    </div>
+                    <div class="sendfeedback">
+                        <h2>Send Feedback</h2>
+                        <form>
+                            <h6>Your Name: </h6>
+                            <input type="text" class="yourname" />
+                            <h6>Mobile Number: </h6>
+                            <input type="text" class="mobilenumber" />
+                            <h6>Message: </h6>
+                            <textarea></textarea>
+                            <button>SUBMIT </button>
+                        </form>
+                    </div>
+                </footer>
+
+            </div>
+
+
+            <div class="copyrightswrapper">
+                <div id="copyrights" class="container">
+
+                    <p>Copyright 2014 <a href="https://www.facebook.com/Mido.HHH"> Mohamed Sobhy </a> All Rights Reserved</p>
+
                 </div>
-            </footer>
+            </div>
+
+            <div class="fixedsocial">
+                <a href="https://www.facebook.com/Mido.HHH"><img src="images/facebook.png" width="20" height="20" alt="fb"> </a>
+                <a href="https://www.behance.net/Mido_HHH"><img src="images/behance.png" width="20" height="20" alt="behance">
+                </a>
+            </div>
         </div>
     )
 }
