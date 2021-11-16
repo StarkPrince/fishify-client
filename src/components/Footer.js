@@ -47,7 +47,7 @@ function Footer()
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contact">
                                 <h4 className="text-uppercase fw-bold mb-4"><i className="bi bi-person-rolodex"></i> Contact</h4>
-                                <p><i className="bi bi-house"></i> LehariyaSarai, Darbhanga</p>
+                                <p><i className="bi bi-house"></i> LaheriaSarai, Darbhanga</p>
                                 <p><i className="bi bi-envelope"></i> info@example.com</p>
                                 <p><i className="bi bi-telephone-fill"></i> +91 999 000 00 00</p>
                             </div>

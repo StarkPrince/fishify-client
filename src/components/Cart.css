@@ -1,3 +1,13 @@
 .cart{
     font-size: medium;
 }
+input[type="text"],input[type="number"],input[type="email"],input[type="password"]
+{
+    font-size: medium;
+}
+textarea[type="address"]{
+    font-size: medium;
+}
+button[type="submit"]{
+    font-size: medium;
+}
