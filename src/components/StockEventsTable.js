@@ -30,7 +30,7 @@ function StockEventsTable({ products, items, setItems })
                     <article className="hentry card m-auto mb-3 mt-3 shadow d-flex flex-column" style={{ width: '24rem', height: '38rem', backgroundColor: 'white', border: 'none', borderRadius: '5px' }} key={product.id}>
                         <header className="entry-header align-items-center">
                             <div className="entry-thumbnail">
-                                <a href="portfolio-item.html"><img
+                                <a><img
                                     src={img}
                                     style={{ width: '22rem', height: '20rem' }}
                                     alt={product.title}
@@ -39,14 +39,26 @@ function StockEventsTable({ products, items, setItems })
                             </div>
                             <div className="align-items-center">
                                 <h3 className="entry-title m-5 mb-0 mt-0">
-                                    <a href="portfolio-item.html"><span >{product.title}</span>
-                                        {product.Bestseller && <span >⭐</span>}</a>
+                                    <a><span >{product.title}</span>
+                                    </a>
                                 </h3>
-                                <h4 className="m-5 mb-2 mt-0">₹{product.price}/kg</h4>
+                                <div className="d-flex flex-row">
+                                    <h4 className="m-5 mb-2 mt-0">₹{product.price}/kg</h4>
+                                    <div className="d-flex flex-column">
+                                        <div className="m-3 mb-2 mt-0">
+                                            <span className={`text-white m-0 p-1 rounded bg-${product.Stock < 1 ? "danger" : "success"} fs-6`}>
+                                                {product.Stock < 1 ? "Out of Stock" : "In Stock"}
+                                            </span>
+                                        </div>
+                                        <div className="m-3 mb-2 mt-0">
+                                            {product.Bestseller && <span className="bg-primary text-white fs-6 p-1 m-0 rounded">Bestseller
+                                            </span>}
+                                        </div>
+                                    </div>
+
+                                </div>
                                 <h5 className="m-5 mb-2 mt-0">{product.description}</h5>
-                                <span className={`m-5 mb-2 mt-0 rounded p-1 text-white fs-6 bg-${product.Stock < 1 ? "danger" : "success"}`}>
-                                    {product.Stock < 1 ? "Out of Stock" : "In Stock"}
-                                </span>
+
                             </div>
                             <div className="align-items-center btn btn-success" style={{ position: 'absolute', bottom: '1.5rem', left: '6.5rem', height: '3rem' }}>
                                 {items[product.id] === 0 ?
