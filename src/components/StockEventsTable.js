@@ -2,14 +2,8 @@ import React from 'react'
 
 function StockEventsTable({ products, items, setItems }) 
 {
-    const addItem = (id) =>
-    {
-        setItems({ ...items, [id]: items[id] + 1 })
-    }
-    const removeItem = (id) =>
-    {
-        setItems({ ...items, [id]: items[id] - 1 })
-    }
+    const addItem = (id) => { setItems({ ...items, [id]: items[id] + 1 }) }
+    const removeItem = (id) => { setItems({ ...items, [id]: items[id] - 1 }) }
     return (
         <div className="container d-flex align-content-around flex-wrap">
             {products.map(product =>

@@ -1,5 +1,4 @@
 import React from 'react'
-import './Cart.css'
 import emailjs from 'emailjs-com'
 
 function Cart({ products, items, setItems })
