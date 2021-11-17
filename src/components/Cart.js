@@ -24,31 +24,17 @@ function Cart({ products, items, setItems })
             phone_no: phone.value,
             email: email.value,
             address: address.value,
-            pro1: products[0].title,
-            pro2: products[1].title,
-            pro3: products[2].title,
-            pro4: products[3].title,
-            pro5: products[4].title,
-            pro6: products[5].title,
-            pro7: products[6].title,
-            pro8: products[7].title,
-            pro9: products[8].title,
-            pro10: products[9].title,
-            cnt1: items[products[0].id],
-            cnt2: items[products[1].id],
-            cnt3: items[products[2].id],
-            cnt4: items[products[3].id],
-            cnt5: items[products[4].id],
-            cnt6: items[products[5].id],
-            cnt7: items[products[6].id],
-            cnt8: items[products[7].id],
-            cnt9: items[products[8].id],
-            cnt10: items[products[9].id],
         };
-        console.log(templateParams);
-        const response = await emailjs.send(serviceID, templateID, templateParams, userID)
-        console.log(response.status);
+        var ctr = 1;
+        for (let i = 0; i < products.length; i++) {
+            if (items[products[i].id] > 0) {
+                templateParams["pro" + (i + 1)] = (ctr + ". " + products[i].title + " : " + items[products[i].id] + "kg");
+                ctr++;
+            }
+        }
+        await emailjs.send(serviceID, templateID, templateParams, userID)
     }
+
 
     return (
         <div className="container-md cart">
