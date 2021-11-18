@@ -10,7 +10,7 @@ function Header()
                     <Link className="nav-link" to="/">🐟HOME</Link>
                     <Link className="nav-link" to="/checkout"><i className="bi bi-cart4"></i>Buy</Link>
                     <a className="nav-link" href="#contact"><i className="bi bi-person-lines-fill"></i> Contact</a>
-                    <a className="nav-link" href="#about"><i className="bi bi-file-person"></i> About</a>
+                    {/* <a className="nav-link" href="#about"><i className="bi bi-file-person"></i> About</a> */}
                     {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
