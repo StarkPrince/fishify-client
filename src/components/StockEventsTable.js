@@ -26,7 +26,7 @@ function StockEventsTable({ products, items, setItems })
                             <div className="entry-thumbnail">
                                 <a><img
                                     src={img}
-                                    style={{ width: '22rem', height: '20rem' }}
+                                    style={{ width: '90%', height: '21rem' }}
                                     alt={product.title}
                                     className="m-3"
                                 /></a>
