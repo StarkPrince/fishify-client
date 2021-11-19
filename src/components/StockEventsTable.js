@@ -22,6 +22,7 @@ function StockEventsTable({ products, items, setItems })
                 }
                 return (
                     <article className="hentry card m-auto mb-3 mt-3 shadow d-flex flex-column" style={{ width: '24rem', height: '38rem', backgroundColor: 'white', border: 'none', borderRadius: '5px' }} key={product.id}>
+
                         <header className="entry-header align-items-center">
                             <div className="entry-thumbnail">
                                 <a><img
@@ -44,16 +45,12 @@ function StockEventsTable({ products, items, setItems })
                                                 {product.Stock < 1 ? "Out of Stock" : "In Stock"}
                                             </span>
                                         </div>
-                                        <div className="m-3 mb-2 mt-0">
-                                            {product.Bestseller && <span className="bg-primary text-white fs-6 p-1 m-0 rounded">Bestseller
-                                            </span>}
-                                        </div>
                                     </div>
 
                                 </div>
-                                <h5 className="m-5 mb-2 mt-0">{product.description}</h5>
-
+                                <h5 className="m-5 mb-2 mt-0 fs-6">{product.description}</h5>
                             </div>
+                            {product.Bestseller && <div class="label-top shadow-sm">Bestseller</div>}
                             <div className="align-items-center btn btn-success" style={{ position: 'absolute', bottom: '1.5rem', left: '6.5rem', height: '3rem' }}>
                                 {items[product.id] === 0 ?
                                     <button className={`btn ${items[product.id] >= product.Stock ? "disabled" : ""}`} onClick={() => addItem(product.id)}>

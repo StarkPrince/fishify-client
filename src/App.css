@@ -36,3 +36,15 @@ button[type="submit"]{
     font-family: 'Eczar', serif;
     font-weight: 400;
 }
+.label-top {
+    position: absolute;
+    background-color:  #f7810a;
+    color: #fff;
+    top: 8px;
+    right: 8px;
+    padding: 5px 10px 5px 10px;
+    font-size: .7rem;
+    font-weight: 600;
+    border-radius: 3px;
+    text-transform: uppercase
+}
