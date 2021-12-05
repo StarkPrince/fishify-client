@@ -3,9 +3,12 @@ import emailjs from 'emailjs-com'
 
 function Cart({ products, items, setItems })
 {
-    const addItem = (id) =>
+    const total = products.reduce((total, product) => total + product.price * items[product.id], 0)
+    const addItem = (id, mx) =>
     {
-        setItems({ ...items, [id]: items[id] + 1 })
+        if (items[id] < mx) {
+            setItems({ ...items, [id]: items[id] + 1 })
+        }
     }
     const removeItem = (id) =>
     {
@@ -36,74 +39,98 @@ function Cart({ products, items, setItems })
 
 
     return (
-        <div className="container-md cart">
-            {products.map(product =>
-            {
-                var img = product.image.formats.thumbnail.url
-                return (
-                    <div key={product.id}>
-                        {items[product.id] > 0 ?
-                            <div className="hentry card m-auto mb-1 mt-1 shadow d-flex flex-row justify-content-around"
-                                style={{ height: '12rem' }}>
-                                <img
-                                    src={img}
-                                    style={{ width: '10rem' }}
-                                    alt={product.title}
-                                    className="m-3 rounded-1"
-                                />
-                                <div className="align-items-around m-3" style={{ width: '25rem' }}>
-                                    <div className="card-body mb-0">
-                                        <h3 className="card-title">{product.title}</h3>
-                                        <h4>₹{product.price * items[product.id]}</h4>
-                                    </div>
-                                    <div className="btn btn-success mt-0">
-                                        <button className="btn" onClick={() => removeItem(product.id)}>
-                                            <span className="fw-bold m-0 text-light ">-</span>
-                                        </button>
-                                        <span className="fw-bold m-0 text-light ">{items[product.id]} kg</span>
-                                        <button className={`btn ${items[product.id] >= product.Stock ? "disabled" : ""}`} onClick={() => addItem(product.id)}>
-                                            <span className="fw-bold m-0 text-light">+</span>
-                                        </button>
-                                    </div>
+        <main className="page shopping-cart-page">
+            <section className="clean-block clean-cart dark">
+                <div className="container">
+                    <div className="block-heading">
+                        <h2 className="text-info">Shopping Cart</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                            mattis vitae leo.</p>
+                    </div>
+                    <div className="content">
+                        <div className="row g-0">
+                            <div className="col-md-12 col-lg-8">
+                                <div className="items">
+                                    {products.map(product =>
+                                    {
+                                        var img = product.image.formats.thumbnail.url
+                                        return (
+                                            <div key={product.id}>
+                                                {items[product.id] > 0 ?
+                                                    <div className="product">
+                                                        <div className="row justify-content-center align-items-center">
+                                                            <div className="col-md-3">
+                                                                <div className="product-image"><img
+                                                                    className="img-fluid d-block mx-auto image"
+                                                                    src={img} /></div>
+                                                            </div>
+                                                            <div className="col-md-5 product-info"><a className="product-name"
+                                                                href="#">{product.title}</a>
+                                                                <div className="product-specs">
+                                                                    <div><span>Display:&nbsp;</span><span className="value">5 inch</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-6 col-md-2 quantity"><label
+                                                                className="form-label d-none d-md-block"
+                                                                for="quantity">Quantity</label>
+                                                                <div className="btn btn-success fs-6 fw-bold text-light">
+                                                                    <span onClick={() => removeItem(product.id)}> - </span>
+                                                                    <span >{items[product.id]} kg</span>
+                                                                    <span onClick={() => addItem(product.id, product.Stock)}> + </span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-6 col-md-2 price"><span>₹{product.price * items[product.id]}</span></div>
+                                                        </div>
+                                                    </div> : null}
+
+                                            </div>)
+                                    })
+                                    }
+
                                 </div>
-                            </div> : null}
-                    </div>)
-            })
-            }
-            <div>
-                <div className="hentry card m-auto mb-1 mt-1 shadow d-flex flex-row justify-content-around"
-                    style={{ height: '6rem' }}>
-                    <h4 className="m-auto">
-                        <span className="fw-bold m-0 text-dark ">Total: ₹{products.reduce((total, product) => total + product.price * items[product.id], 0)}</span>
-                    </h4>
+                            </div>
+                            <div className="col-md-12 col-lg-4">
+                                <div className="summary">
+                                    <h3>Summary</h3>
+                                    <h4><span className="text">Subtotal</span><span className="price">₹{total}</span></h4>
+                                    <h4><span className="text">Discount</span><span className="price">₹0</span></h4>
+                                    <h4><span className="text">Shipping</span><span className="price">₹0</span></h4>
+                                    <h4><span className="text">Total</span><span className="price">₹{total}</span></h4><button
+                                        className="btn btn-primary btn-lg d-block w-100" type="button">Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <form className="bg-light mt-4 p-4 rounded form" onSubmit={onCheckout}>
-                    <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Name*</label>
-                        <input type="text" className="form-control" id="name" required />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">Phone Number*</label>
-                        <input type="number" className="form-control" id="phone" aria-describedby="phoneHelp" required />
-                        <div id="phoneHelp" className="form-text">We'll never share your phone number with anyone else.</div>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
-                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="address" className="form-label">Address*</label>
-                        <textarea type="address" className="form-control" id="address" required />
-                    </div>
-                    <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Buy</button>
-                </form>
-            </div>
-        </div>
+                <div className="container-md">
+                    <form className="bg-light mt-4 p-4 rounded form" onSubmit={onCheckout}>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Name*</label>
+                            <input type="text" className="form-control" id="name" required />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="phone" className="form-label">Phone Number*</label>
+                            <input type="number" className="form-control" id="phone" aria-describedby="phoneHelp" required />
+                            <div id="phoneHelp" className="form-text">We'll never share your phone number with anyone else.</div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Email address</label>
+                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="address" className="form-label">Address*</label>
+                            <textarea type="address" className="form-control" id="address" required />
+                        </div>
+                        <div className="mb-3 form-check">
+                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                            <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Buy</button>
+                    </form>
+                </div>
+            </section>
+        </main >
     )
 }
 

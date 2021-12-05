@@ -4,57 +4,45 @@ function Footer()
 {
     return (
         <div id="about">
-            <footer className="text-center text-md-start bg-light text-muted">
-                <section
-                    className="d-flex justify-content-center  p-4 border-bottom"
-                >
-                    <div className="me-5 d-none d-lg-block">
-                        <span>Get connected with us on social networks:</span>
-                    </div>
-                    <div>
-                        <a href="" className="me-4 text-reset">
-                            <i className="bi bi-facebook"></i>
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i className="bi bi-whatsapp"></i>
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i className="bi bi-instagram"></i>
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i className="bi bi-twitter"></i>
-                        </a>
-                    </div>
-                </section>
-                <section className="">
-                    <div className="container text-center text-md-start mt-5">
-                        <div className="row mt-3">
-                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                                <h4 className="text-uppercase fw-bold mb-4">
-                                    <i className="bi bi-gem"></i> Company name
-                                </h4>
-                                <p>
-                                    Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                    dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </div>
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h4 className="text-uppercase fw-bold mb-4"><i className="bi bi-link"></i> Useful links</h4>
-                                <p><a href="#!" className="text-reset">Pricing</a></p>
-                                <p><a href="#!" className="text-reset">Orders</a></p>
-                                <p><a href="#!" className="text-reset">Help</a></p>
-                            </div>
-                            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contact">
-                                <h4 className="text-uppercase fw-bold mb-4"><i className="bi bi-person-rolodex"></i> Contact</h4>
-                                <p><i className="bi bi-house"></i> LaheriaSarai, Darbhanga</p>
-                                <p><i className="bi bi-envelope"></i> info@example.com</p>
-                                <p><i className="bi bi-telephone-fill"></i> +91 7070909043</p>
-                            </div>
+            <footer className="page-footer dark">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-3">
+                            <h5>Get started</h5>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Sign up</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-sm-3">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><a href="#">Company Information</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Reviews</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-sm-3">
+                            <h5>Contact</h5>
+                            <ul>
+                                <li><a href="#"><i className="bi bi-house"></i> LaheriaSarai, Darbhanga</a></li>
+                                <li><a href="#"><i className="bi bi-envelope"></i> info@example.com</a></li>
+                                <li><a href="#"><i className="bi bi-telephone-fill"></i> +91 7070909043</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-sm-3">
+                            <h5>Legal</h5>
+                            <ul>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
                         </div>
                     </div>
-                </section>
-                <div className="text-center p-4" >
-                    © 2021 Copyright: Sushil Fish Cart
+                </div>
+                <div className="footer-copyright">
+                    <p>© 2021 Copyright: Sushil Fish Cart</p>
                 </div>
             </footer>
         </div>
