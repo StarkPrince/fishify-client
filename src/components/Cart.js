@@ -67,7 +67,7 @@ function Cart({ products, items, setItems })
                                                             <div className="col-md-5 product-info"><a className="product-name"
                                                                 href="#">{product.title}</a>
                                                                 <div className="product-specs">
-                                                                    <div><span>Display:&nbsp;</span><span className="value">5 inch</span></div>
+                                                                    <div><span>Price:&nbsp;</span><span className="value"> {product.price}/kg </span></div>
                                                                 </div>
                                                             </div>
                                                             <div className="col-6 col-md-2 quantity"><label
